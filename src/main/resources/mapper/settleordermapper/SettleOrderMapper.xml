@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wk.springbootapp.app.mapper.settleordermapper.SettleOrderMapper">
+    <resultMap id="BaseResultMap" type="com.wk.springbootapp.app.domain.entity.settleorder.SettleOrderEntity">
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="settle_order_id" property="settleOrderId" jdbcType="INTEGER" />
+        <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, settle_order_id as settleOrderId, order_id as orderId
+    </sql>
+
+    <select id="querySettleOrderByPage" resultType="com.wk.springbootapp.app.domain.entity.settleorder.SettleOrderEntity">
+        select
+        <include refid="Base_Column_List" />
+        from settleorder
+    </select>
+    
+    <insert id="insert">
+        INSERT INTO settleorder VALUES (2,2,2);
+    </insert>
+
+
+</mapper>
